@@ -1,5 +1,4 @@
-<input #newTodo type="text">
-<button (click)="add(newTodo.value); newTodo.value=''">Add</button>
+<app-add-todo (add)="add($event)"></app-add-todo>
 
 <ul>
   <li *ngFor="let todo of todos">
