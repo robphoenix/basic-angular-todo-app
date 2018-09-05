@@ -1,6 +1,9 @@
 <input #newTodo type="text">
-<button (click)="addTodo(newTodo.value); newTodo.value=''">Add</button>
+<button (click)="add(newTodo.value); newTodo.value=''">Add</button>
 
 <ul>
-  <li *ngFor="let todo of todos">{{todo.item}}</li>
+  <li *ngFor="let todo of todos">
+    {{todo.item}}
+    <button class="delete" title="delete todo" (click)="delete(todo)">x</button>
+  </li>
 </ul>

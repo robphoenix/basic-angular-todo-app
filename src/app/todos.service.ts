@@ -18,25 +18,35 @@ export class TodosService {
 
   getTodos(): Observable<ITodo[]> {
     return this.http.get<ITodo[]>(this.todosUrl).pipe(
-      tap(_ => console.log('fetched todos')),
+      tap(_ => this.log('fetched todos')),
       catchError(this.handleError('getTodos', []))
     );
   }
 
   addTodo(todo: ITodo): Observable<ITodo> {
     return this.http.post<ITodo>(this.todosUrl, todo, httpOptions).pipe(
-      tap((item: ITodo) =>
-        console.log(`TODO Service: added todo w/ id=${item.id}`)
-      ),
+      tap((item: ITodo) => this.log(`added todo w/ id=${item.id}`)),
       catchError(this.handleError<ITodo>('addTodo'))
+    );
+  }
+
+  deleteTodo(todo: ITodo): Observable<ITodo> {
+    const url = `${this.todosUrl}/${todo.id}`;
+    return this.http.delete<ITodo>(url, httpOptions).pipe(
+      tap(_ => this.log(`deleted todo id=${todo.id}`)),
+      catchError(this.handleError<ITodo>('deleteTodo'))
     );
   }
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
-      console.log(`TODO Service: ${operation} failed: ${error.message}`);
+      this.log(`${operation} failed: ${error.message}`);
       return of(result as T);
     };
+  }
+
+  private log(message: string) {
+    console.log(`TODOS Service: ${message}`);
   }
 }

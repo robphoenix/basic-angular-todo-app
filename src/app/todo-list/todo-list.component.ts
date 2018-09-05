@@ -20,13 +20,20 @@ export class TodoListComponent implements OnInit {
     this.todosService.getTodos().subscribe(todos => (this.todos = todos));
   }
 
-  addTodo(item: string) {
+  add(item: string) {
     item = item.trim();
     if (!item) {
       return;
     }
     this.todosService.addTodo({ item } as ITodo).subscribe(todo => {
-      this.todos.push(todo);
+      if (todo) {
+        this.todos.push(todo);
+      }
     });
+  }
+
+  delete(todo: ITodo) {
+    this.todos = this.todos.filter(t => t !== todo);
+    this.todosService.deleteTodo(todo).subscribe();
   }
 }
