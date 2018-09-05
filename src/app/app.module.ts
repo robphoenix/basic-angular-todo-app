@@ -5,9 +5,11 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppComponent } from './app.component';
 import { InMemoryDataService } from './in-memory-data.service';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { TodoComponent } from './todo/todo.component';
+import { AddTodoComponent } from './add-todo/add-todo.component';
 
 @NgModule({
-  declarations: [AppComponent, TodoListComponent],
+  declarations: [AppComponent, TodoListComponent, TodoComponent, AddTodoComponent],
   imports: [
     BrowserModule,
     HttpClientModule,
