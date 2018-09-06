@@ -1,7 +1,7 @@
 <app-add-todo (add)="add($event)"></app-add-todo>
 
-<ul>
-  <li *ngFor="let todo of todos">
+<ul class="list pl0 center">
+  <li *ngFor="let todo of todos" class="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30">
     <app-todo [todo]="todo" (delete)="delete($event)" (done)="toggleDone($event)"></app-todo>
   </li>
 </ul>

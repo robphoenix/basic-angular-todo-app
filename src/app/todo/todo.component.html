@@ -1,4 +1,8 @@
-{{todo.item}} is <span *ngIf="!todo.done">not</span> complete.
-<button title="delete todo" (click)="deleteTodo()">x</button>
-<button title="update todo" (click)="toggleDone()">{{todo.done ? 'Undo' :
-  'Done'}}</button>
+<div class="ph3">
+  <label>
+    <input type="checkbox" class="mh3" title="update todo" (click)="toggleDone()">
+    <span class="di" [class.strike]="todo.done === true">{{todo.item}}</span>
+    <span class="f6 link dim ph3 dib red fr pointer" title="delete todo"
+      (click)="deleteTodo()">X</span>
+  </label>
+</div>
