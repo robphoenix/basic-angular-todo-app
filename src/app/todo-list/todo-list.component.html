@@ -2,6 +2,6 @@
 
 <ul>
   <li *ngFor="let todo of todos">
-    <app-todo [todo]="todo" (delete)="delete($event)"></app-todo>
+    <app-todo [todo]="todo" (delete)="delete($event)" (done)="toggleDone($event)"></app-todo>
   </li>
 </ul>

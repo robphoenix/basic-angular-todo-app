@@ -1,2 +1,4 @@
- {{todo.item}}
+{{todo.item}} is <span *ngIf="!todo.done">not</span> complete.
 <button title="delete todo" (click)="deleteTodo()">x</button>
+<button title="update todo" (click)="toggleDone()">{{todo.done ? 'Undo' :
+  'Done'}}</button>

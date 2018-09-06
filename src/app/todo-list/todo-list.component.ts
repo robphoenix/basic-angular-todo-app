@@ -1,11 +1,11 @@
-import { Component, OnInit } from "@angular/core";
-import { ITodo } from "../todo";
-import { TodosService } from "./../todos.service";
+import { Component, OnInit } from '@angular/core';
+import { ITodo } from '../todo';
+import { TodosService } from './../todos.service';
 
 @Component({
-  selector: "app-todo-list",
-  templateUrl: "./todo-list.component.html",
-  styleUrls: ["./todo-list.component.css"]
+  selector: 'app-todo-list',
+  templateUrl: './todo-list.component.html',
+  styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
   todos: ITodo[];
@@ -35,5 +35,16 @@ export class TodoListComponent implements OnInit {
   delete(todo: ITodo) {
     this.todos = this.todos.filter(t => t !== todo);
     this.todosService.deleteTodo(todo).subscribe();
+  }
+
+  toggleDone(todo: ITodo) {
+    const done: boolean = !todo.done;
+    this.todos.forEach(t => {
+      if (t === todo) {
+        t.done = done;
+      }
+    });
+    todo.done = done;
+    this.todosService.updateTodo(todo).subscribe();
   }
 }

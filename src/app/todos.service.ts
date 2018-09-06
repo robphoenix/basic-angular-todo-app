@@ -38,6 +38,13 @@ export class TodosService {
     );
   }
 
+  updateTodo(todo: ITodo): Observable<ITodo> {
+    return this.http.put(this.todosUrl, todo, httpOptions).pipe(
+      tap(_ => this.log(`updated todo id=${todo.id}`)),
+      catchError(this.handleError<any>('updateTodo'))
+    );
+  }
+
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

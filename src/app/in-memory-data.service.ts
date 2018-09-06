@@ -4,10 +4,10 @@ import { ITodo } from './todo';
 export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const todos: ITodo[] = [
-      { id: 1, item: 'Read Ralph Ellison\'s "The Invisible Man"' },
-      { id: 2, item: 'Get the kids ready for school.' },
-      { id: 3, item: 'Chop wood' },
-      { id: 4, item: 'Grok Angular' }
+      { id: 1, item: 'Read Ralph Ellison\'s "The Invisible Man"', done: false },
+      { id: 2, item: 'Get the kids ready for school.', done: false },
+      { id: 3, item: 'Chop wood', done: false },
+      { id: 4, item: 'Grok Angular', done: false }
     ];
     return { todos };
   }

@@ -14,8 +14,15 @@ export class TodoComponent implements OnInit {
   @Output()
   delete: EventEmitter<ITodo> = new EventEmitter<ITodo>();
 
+  @Output()
+  done: EventEmitter<ITodo> = new EventEmitter<ITodo>();
+
   deleteTodo() {
     this.delete.emit(this.todo);
+  }
+
+  toggleDone() {
+    this.done.emit(this.todo);
   }
 
   ngOnInit() {}
