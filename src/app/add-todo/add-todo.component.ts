@@ -19,5 +19,9 @@ export class AddTodoComponent implements OnInit {
     this.add.emit(item);
   }
 
+  todosLeft(): number {
+    return this.todos.filter(todo => !todo.done).length;
+  }
+
   ngOnInit() {}
 }
