@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ITodo } from '../todo';
 
 @Component({
   selector: 'app-add-todo',
@@ -6,6 +7,9 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./add-todo.component.css']
 })
 export class AddTodoComponent implements OnInit {
+  @Input()
+  todos: ITodo[];
+
   constructor() {}
 
   @Output()

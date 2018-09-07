@@ -1,4 +1,4 @@
-<app-add-todo (add)="add($event)"></app-add-todo>
+<app-add-todo (add)="add($event)" [todos]="todos"></app-add-todo>
 
 <ul class="list pl0 center">
   <li *ngFor="let todo of todos" class="lh-copy pv3 ba bl-0 bt-0 br-0 b--dotted b--black-30">
