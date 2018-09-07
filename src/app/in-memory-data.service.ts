@@ -11,4 +11,8 @@ export class InMemoryDataService implements InMemoryDbService {
     ];
     return { todos };
   }
+
+  genId(todos: ITodo[]): number {
+    return todos.length > 0 ? Math.max(...todos.map(todo => todo.id)) + 1 : 1;
+  }
 }

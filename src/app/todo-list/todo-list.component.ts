@@ -8,7 +8,7 @@ import { TodosService } from './../todos.service';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  todos: ITodo[];
+  todos: ITodo[] = []
 
   constructor(private todosService: TodosService) {}
 
