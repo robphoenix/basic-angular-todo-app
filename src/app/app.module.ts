@@ -9,15 +9,20 @@ import { TodoComponent } from './todo/todo.component';
 import { AddTodoComponent } from './add-todo/add-todo.component';
 
 @NgModule({
-  declarations: [AppComponent, TodoListComponent, TodoComponent, AddTodoComponent],
+  declarations: [
+    AppComponent,
+    TodoListComponent,
+    TodoComponent,
+    AddTodoComponent,
+  ],
   imports: [
     BrowserModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
-      dataEncapsulation: false
-    })
+      dataEncapsulation: false,
+    }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

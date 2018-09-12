@@ -13,8 +13,8 @@ describe('AppComponent', () => {
         AppComponent,
         TodoListComponent,
         TodoComponent,
-        AddTodoComponent
-      ]
+        AddTodoComponent,
+      ],
     }).compileComponents();
   }));
 

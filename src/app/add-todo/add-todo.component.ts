@@ -4,7 +4,7 @@ import { ITodo } from '../todo';
 @Component({
   selector: 'app-add-todo',
   templateUrl: './add-todo.component.html',
-  styleUrls: ['./add-todo.component.css']
+  styleUrls: ['./add-todo.component.css'],
 })
 export class AddTodoComponent implements OnInit {
   @Input()
@@ -20,7 +20,7 @@ export class AddTodoComponent implements OnInit {
   }
 
   todosLeft(): number {
-    return this.todos.filter(todo => !todo.done).length;
+    return this.todos.filter((todo) => !todo.done).length;
   }
 
   ngOnInit() {}

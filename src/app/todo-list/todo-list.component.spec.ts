@@ -16,8 +16,8 @@ describe('TodoListComponent', () => {
         AppComponent,
         TodoListComponent,
         TodoComponent,
-        AddTodoComponent
-      ]
+        AddTodoComponent,
+      ],
     }).compileComponents();
   }));
 
