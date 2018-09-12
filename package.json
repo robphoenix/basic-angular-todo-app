@@ -6,7 +6,10 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "test:ci": "ng test --watch=false --progress=false --browsers=ChromeHeadlessCI",
     "lint": "ng lint",
+    "format": "prettier --config .prettierrc --write \"./src/**/*.ts\" \"./src/styles.css\"",
+    "format:ci": "prettier --config .prettierrc --list-different \"./src/**/*.ts\" \"./src/styles.css\"",
     "e2e": "ng e2e"
   },
   "private": true,
@@ -41,6 +44,7 @@
     "karma-coverage-istanbul-reporter": "~2.0.0",
     "karma-jasmine": "~1.1.1",
     "karma-jasmine-html-reporter": "^0.2.2",
+    "prettier": "^1.14.2",
     "protractor": "~5.4.0",
     "tachyons": "^4.10.0",
     "ts-node": "~5.0.1",
